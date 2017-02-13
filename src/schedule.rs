@@ -68,7 +68,7 @@ impl Schedule for CronSchedule {
             }
 
             // Find the next applicable day
-            while !self.days_of_month.is_empty() && !self.days_of_week.is_empty() {
+            while !self.days_of_month.is_empty() || !self.days_of_week.is_empty() {
                 if !self.days_of_month.is_empty() && self.days_of_month.contains(&r.day()) {
                     break;
                 }
